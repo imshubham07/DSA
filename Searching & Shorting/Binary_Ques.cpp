@@ -95,9 +95,4 @@ int main(){
     // //cout<< "ans is "<<indexOfLastOcc<<endl;
     // auto ans2 = upper_bound (v.begin(), v.end(), 7) ;
     // cout<< "ans2 is  "<<ans2-v.begin()<<endl;
-
-
-    //Q3. Find missing number of given element 
-
-    vector<int>arr{1,2,3,4,6,7,8,9};
 }

@@ -95,4 +95,23 @@ int main(){
     // //cout<< "ans is "<<indexOfLastOcc<<endl;
     // auto ans2 = upper_bound (v.begin(), v.end(), 7) ;
     // cout<< "ans2 is  "<<ans2-v.begin()<<endl;
+
+
+
+    //Q3. find total occurence of element 
+    vector<int>arr{2,4,4,4,4,4,4,6,8,10};
+
+    //find first Occurence
+    auto temp = lower_bound(arr.begin(), arr.end(), 4);
+    int FirstOccr = temp - arr.begin();
+
+    // find last Occurence
+    auto temp2 =  upper_bound(arr.begin() , arr.end() , 4);
+    int LastOccr = temp2 - arr.begin();
+
+    //finding total Occurence
+    int TotalOccr = LastOccr - FirstOccr + 1;
+
+    cout<<"the total Occurence is  "<<TotalOccr<<endl;
+
 }

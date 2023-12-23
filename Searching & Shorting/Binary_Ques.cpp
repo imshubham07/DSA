@@ -1,6 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+int findPeakIndex(vector<int>arr){
+    int s = 0;
+    int e = arr.size() - 1;
+    int mid = s + (e - s)/2;
+
+
+    while(s < e){
+        if (arr[mid] < arr[mid + 1]){
+            //right side search
+            s = mid + 1;
+        }
+        else{
+            e = mid;
+        }
+        mid = s + (e - s)/2;
+    }
+    return s;
+}
+
 // //Q2. find Occurence the element through binary Search
 
 // int LastOccurence(vector<int>v , int targets){
@@ -99,19 +119,30 @@ int main(){
 
 
     //Q3. find total occurence of element 
-    vector<int>arr{2,4,4,4,4,4,4,6,8,10};
 
-    //find first Occurence
-    auto temp = lower_bound(arr.begin(), arr.end(), 4);
-    int FirstOccr = temp - arr.begin();
 
-    // find last Occurence
-    auto temp2 =  upper_bound(arr.begin() , arr.end() , 4);
-    int LastOccr = temp2 - arr.begin();
+    // vector<int>arr{2,4,4,4,4,4,4,6,8,10};
 
-    //finding total Occurence
-    int TotalOccr = LastOccr - FirstOccr + 1;
+    // //find first Occurence
+    // auto temp = lower_bound(arr.begin(), arr.end(), 4);
+    // int FirstOccr = temp - arr.begin();
 
-    cout<<"the total Occurence is  "<<TotalOccr<<endl;
+    // // find last Occurence
+    // auto temp2 =  upper_bound(arr.begin() , arr.end() , 4);
+    // int LastOccr = temp2 - arr.begin();
+
+    // //finding total Occurence
+    // int TotalOccr = LastOccr - FirstOccr + 1;
+
+    // cout<<"the total Occurence is  "<<TotalOccr<<endl;
+
+
+    //Q4. find  the Peak Index in mountain in Array
+    
+    
+    vector<int>arr{0,1,0};
+        int r =  findPeakIndex(arr);
+        cout << "Peak Element is "<<r<<endl;
+    
 
 }

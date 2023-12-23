@@ -2,6 +2,8 @@
 using namespace std;
 
 
+// //Q4. find  the Peak Index in mountain in Array
+
 int findPeakIndex(vector<int>arr){
     int s = 0;
     int e = arr.size() - 1;

@@ -6,34 +6,34 @@ using namespace std;
 int main(){
 
 
-     // create a vector
-     vector<int>arr;
+//      // create a vector
+//      vector<int>arr;
 
-//    int ans = (sizeof (arr)/sizeof (int));
-//    cout<<ans<<endl;
+// //    int ans = (sizeof (arr)/sizeof (int));
+// //    cout<<ans<<endl;
 
-     cout << arr.size() << endl;
-     cout << arr.capacity()<< endl;
+//      cout << arr.size() << endl;
+//      cout << arr.capacity()<< endl;
 
 
-     //insert
-     arr.push_back(4);//insert a element
-     arr.push_back(5);
+//      //insert
+//      arr.push_back(4);//insert a element
+//      arr.push_back(5);
 
-//print
-    for (int i = 0; i < arr.size(); ++i) {
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
+// //print
+//     for (int i = 0; i < arr.size(); ++i) {
+//         cout<<arr[i]<<" ";
+//     }
+//     cout<<endl;
 
-    //remove / delete
-    arr.pop_back(); // remove / delete the element
+//     //remove / delete
+//     arr.pop_back(); // remove / delete the element
 
-    //print
-    for (int i = 0; i < arr.size(); ++i) {
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
+//     //print
+//     for (int i = 0; i < arr.size(); ++i) {
+//         cout<<arr[i]<<" ";
+//     }
+//     cout<<endl;
 
     int n;
     cout<<"enter the value of  n "<<endl;

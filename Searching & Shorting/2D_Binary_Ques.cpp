@@ -14,12 +14,12 @@ int binarySearch(vector<int>arr, int target){
             return mid;
         }
         // out off bound ho jaye
-        else if ( mid + 1 < arr.size() && arr[mid + 1] == target)
+        else if ( mid + 1 < e && arr[mid + 1] == target)
         {
             return mid+1;
         }
         // 
-        else if (mid - 1 >= 0 && arr[mid - 1] == target)
+        else if (mid - 1 >= s && arr[mid - 1] == target)
         {
             return mid-1;
         }

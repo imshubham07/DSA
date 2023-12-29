@@ -3,8 +3,42 @@ using namespace std;
 
 
 //Q2. Divide 2 number Using binary Search
-int solve(int divident, int diviser){
-     
+int solve(int dividend, int diviser){
+     int s = 0;
+
+     //the absolute value of an integer number. If the number is negative, it will return the positive value
+     int e = abs(dividend);
+     int ans = INT_MIN;
+     int mid  =  s + (e - s)/2;
+
+     while (s<=e)
+     {
+        //Perfect solution 
+        if (abs(mid*diviser) == abs(dividend))
+        {
+            ans = mid; 
+            
+        }
+        // Not Perfect Solution
+        if (abs(mid*diviser) > abs(dividend))
+        {
+            //search in the left side
+            e =  mid -1;
+        }
+        else
+        {
+            //first store the ans than search in the right side
+            ans = mid;
+            // Search in the left side
+            s = mid + 1;
+        }
+        mid = s + (e - s)/2; 
+     }
+     if ((diviser <0 && dividend<0) || (diviser >0 && dividend>0))
+     {
+        return ans;
+     }
+     return -ans ;
 }
 
 
@@ -60,20 +94,33 @@ int main(){
     //   int ans = binarySearch(arr,target);
     //   cout<<"index of "<<target<<" is "<<ans<<endl;
 
+
+
+
+
     //Q2. Divide 2 number Using binary Search
 
     //take input divident
-    int divident ;
-    cout<<"Enter the Divident = "<<endl;
-    cin>>divident;
+    int dividend ;
+    cout<<"Enter the Dividend = "<<endl;
+    cin>>dividend;
     //take input divisor
     int diviser;
     cout<<"Enter the Diviser = "<<endl;
     cin>>diviser;
 
-    int ans = solve(divident,diviser);
+    int ans = solve(dividend,diviser);
+
+    cout<< "Ans is => "<<ans<<endl;
+//FIND PRISION OF THIS IS qUESTION
 
 
 
+
+
+
+
+
+    //  
     return 0;
 }

@@ -2,44 +2,88 @@
 using namespace std;
 
 
-//Q2. Divide 2 number Using binary Search
-int solve(int dividend, int diviser){
-     int s = 0;
+// Q3.Find the odd occuring element in array
+int solve3(vector<int>arr){
+    int s = 0;
+    int e = arr.size();
 
-     //the absolute value of an integer number. If the number is negative, it will return the positive value
-     int e = abs(dividend);
-     int ans = INT_MIN;
-     int mid  =  s + (e - s)/2;
-
-     while (s<=e)
-     {
-        //Perfect solution 
-        if (abs(mid*diviser) == abs(dividend))
-        {
-            ans = mid; 
-            
+    while (s<=e)
+    {
+        
+    int mid = s + (e-s)/2;
+        if(s==e){
+            //talking about singal element
+            return s;
         }
-        // Not Perfect Solution
-        if (abs(mid*diviser) > abs(dividend))
+
+        // 2nd case -> mid - even or mid - odd index
+        if (mid%2==0)
         {
-            //search in the left side
-            e =  mid -1;
+            if (arr[mid] == arr[mid + 1])
+            {
+                s = mid +2;
+            }
+            
+            else{
+            e = mid;
+            }
         }
         else
         {
-            //first store the ans than search in the right side
-            ans = mid;
-            // Search in the left side
-            s = mid + 1;
+            if (arr[mid] == arr[mid-1])
+            {
+                s = mid + 1;
+            }
+            else{
+                e = mid - 1;
+            }
+            
         }
-        mid = s + (e - s)/2; 
-     }
-     if ((diviser <0 && dividend<0) || (diviser >0 && dividend>0))
-     {
-        return ans;
-     }
-     return -ans ;
+        mid = s + (e - s)/2;
+        
+    }
+    return -1;  
 }
+
+
+//Q2. Divide 2 number Using binary Search
+// int solve(int dividend, int diviser){
+//      int s = 0;
+
+//      //the absolute value of an integer number. If the number is negative, it will return the positive value
+//      int e = abs(dividend);
+//      int ans = INT_MIN;
+//      int mid  =  s + (e - s)/2;
+
+//      while (s<=e)
+//      {
+//         //Perfect solution 
+//         if (abs(mid*diviser) == abs(dividend))
+//         {
+//             ans = mid; 
+            
+//         }
+//         // Not Perfect Solution
+//         if (abs(mid*diviser) > abs(dividend))
+//         {
+//             //search in the left side
+//             e =  mid -1;
+//         }
+//         else
+//         {
+//             //first store the ans than search in the right side
+//             ans = mid;
+//             // Search in the left side
+//             s = mid + 1;
+//         }
+//         mid = s + (e - s)/2; 
+//      }
+//      if ((diviser <0 && dividend<0) || (diviser >0 && dividend>0))
+//      {
+//         return ans;
+//      }
+//      return -ans ;
+// }
 
 
 
@@ -101,18 +145,27 @@ int main(){
     //Q2. Divide 2 number Using binary Search
 
     //take input divident
-    int dividend ;
-    cout<<"Enter the Dividend = "<<endl;
-    cin>>dividend;
-    //take input divisor
-    int diviser;
-    cout<<"Enter the Diviser = "<<endl;
-    cin>>diviser;
+    // int dividend ;
+    // cout<<"Enter the Dividend = "<<endl;
+    // cin>>dividend;
+    // //take input divisor
+    // int diviser;
+    // cout<<"Enter the Diviser = "<<endl;
+    // cin>>diviser;
 
-    int ans = solve(dividend,diviser);
+    // int ans = solve(dividend,diviser);
 
-    cout<< "Ans is => "<<ans<<endl;
-//FIND PRISION OF THIS IS qUESTION
+    // cout<< "Ans is => "<<ans<<endl; //FIND PRISION OF THIS IS qUESTION
+                                        
+
+
+// Q3.Find the odd occuring element in array
+
+    vector<int>arr{1,1,2,3,3};
+    int ans = solve3(arr);
+    cout<< "Index is "<<ans <<endl;
+    cout<< " ans is "<<arr[ans]<<endl;
+
 
 
 

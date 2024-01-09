@@ -10,19 +10,22 @@ int main(){
 // Outer loop will run only till second last element 
     for (int i = 0; i < n-1; i++)
     {
-        int minindex = i;
+        int minIndex = i; 
+        // We will search in the next index
         for (int  j = i+1; j < n; j++)
         {
-            if (arr[j]<arr[minindex])
+            //find min element
+            if (arr[j]<arr[minIndex])
             {
-                //new Minimum ,than store
-                minindex = j;
+                //Will store a new element when found
+                minIndex = j;
             }
         }
-        //swap
-        swap(arr[i],arr[minindex]);
+        //swap the number with minimum element
+        swap(arr[i],arr[minIndex]);
     }
 
+//printing new shorted array
     for (int i = 0; i < n; i++)
     {
         cout<<arr[i]<<" ";

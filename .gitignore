@@ -1,0 +1,19 @@
+# Executable files
+*.exe
+*.out
+*.app
+a.out
+
+# Object files
+*.o
+*.obj
+
+# Compiled binaries
+*.bin
+
+# Linux/Unix executables (no extension)
+*
+
+# Except for directories
+!*/
+!.gitignore

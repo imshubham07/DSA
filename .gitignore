@@ -11,8 +11,6 @@ a.out
 # Compiled binaries
 *.bin
 
-# Linux/Unix executables (no extension)
-*
 
 # Except for directories
 !*/
